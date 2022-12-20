@@ -24,6 +24,13 @@ struct pesan{
 	int lama_sewa;
 	int total;
 	int pilih_kamar;
+	int tglCI;
+	int blnCI;
+	int thnCI;
+	int tglCO;
+	int blnCO;
+	int thnCO;
+	int pilih;
 };
 struct pesan pesanan;
 
@@ -32,6 +39,9 @@ int jumlah_superior=12;
 int jumlah_deluxe=10;
 int jumlah_suite=8;
 int jumlah_presidential=4;
+
+int add1=100000;
+int add2=200000;
 
 int standard=450000;
 int superior=800000;
@@ -48,39 +58,193 @@ void waktu(){
 	struct tm*waktu;
 	time(&pukul);
 	waktu=localtime(&pukul);
-    printf("\tTanggal: %s", asctime(waktu));
+    printf("\t\t\t\t\t  WAKTU LOGIN : %s", asctime(waktu));
 }
 
 void hitung_total(){
-	if(pesanan.pilih_kamar==1){
+	if(pesanan.pilih_kamar==1 && pesanan.pilih==1){
+		jumlah_standard -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*standard+biaya_admin)*pesanan.jumlah_kamar+add1;
+	}else if(pesanan.pilih_kamar==1 && pesanan.pilih==2){
+		jumlah_standard -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*standard+biaya_admin)*pesanan.jumlah_kamar+add2;
+	}else if(pesanan.pilih_kamar==1){
 		jumlah_standard -= pesanan.jumlah_kamar;
 		pesanan.total = (pesanan.lama_sewa*standard+biaya_admin)*pesanan.jumlah_kamar;
+		
+	}else if(pesanan.pilih_kamar==2 && pesanan.pilih==1){
+		jumlah_superior -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*superior+biaya_admin)*pesanan.jumlah_kamar+add1;
+	}else if(pesanan.pilih_kamar==2 && pesanan.pilih==2){
+		jumlah_superior -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*superior+biaya_admin)*pesanan.jumlah_kamar+add2;
 	}else if(pesanan.pilih_kamar==2){
 		jumlah_superior -= pesanan.jumlah_kamar;
 		pesanan.total = (pesanan.lama_sewa*superior+biaya_admin)*pesanan.jumlah_kamar;
+		
+	}else if(pesanan.pilih_kamar==3 && pesanan.pilih==1){
+		jumlah_deluxe -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*deluxe+biaya_admin)*pesanan.jumlah_kamar+add1;
+	}else if(pesanan.pilih_kamar==3 && pesanan.pilih==2){
+		jumlah_deluxe -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*deluxe+biaya_admin)*pesanan.jumlah_kamar+add2;
 	}else if(pesanan.pilih_kamar==3){
 		jumlah_deluxe -= pesanan.jumlah_kamar;
 		pesanan.total = (pesanan.lama_sewa*deluxe+biaya_admin)*pesanan.jumlah_kamar;
+		
+	}else if(pesanan.pilih_kamar==4 && pesanan.pilih==1){
+		jumlah_suite -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*suite+biaya_admin)*pesanan.jumlah_kamar+add1;
+	}else if(pesanan.pilih_kamar==4 && pesanan.pilih==2){
+		jumlah_suite -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*suite+biaya_admin)*pesanan.jumlah_kamar+add2;
 	}else if(pesanan.pilih_kamar==4){
 		jumlah_suite -= pesanan.jumlah_kamar;
-		pesanan.total = (pesanan.lama_sewa*suite+biaya_admin)*pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*suite+biaya_admin)*pesanan.jumlah_kamar+add1;
+		
+	}else if(pesanan.pilih_kamar==5 && pesanan.pilih==1){
+		jumlah_presidential -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*presidential+biaya_admin)*pesanan.jumlah_kamar+add1;
+	}else if(pesanan.pilih_kamar==5 && pesanan.pilih==2){
+		jumlah_presidential -= pesanan.jumlah_kamar;
+		pesanan.total = (pesanan.lama_sewa*presidential+biaya_admin)*pesanan.jumlah_kamar+add2;
 	}else if(pesanan.pilih_kamar==5){
 		jumlah_presidential -= pesanan.jumlah_kamar;
 		pesanan.total = (pesanan.lama_sewa*presidential+biaya_admin)*pesanan.jumlah_kamar;
 	} 
 }
+void selamat(){
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|                                                       |\n");	
+	printf("\t\t\t\t|     <-----  SELAMAT DATANG DI DIAMOND HOTEL ----->    |\n");
+	printf("\t\t\t\t|                                                       |\n");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|        Come with a dream leave with the future        |\n");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t||                                                     ||\n");
+	printf("\t\t\t\t||-----------------------------------------------------||\n");
+	printf("\t\t\t\t||                           *                         ||\n");
+	printf("\t\t\t\t||                          ***                        ||\n");
+	printf("\t\t\t\t||                         *****                       ||\n");
+	printf("\t\t\t\t||                        *******                      ||\n");
+	printf("\t\t\t\t||                       *********                     ||\n");
+	printf("\t\t\t\t||                      ***********                    ||\n");
+	printf("\t\t\t\t||                     *************                   ||\n");
+	printf("\t\t\t\t||                     *************                   ||\n");
+	printf("\t\t\t\t||                      ***********                    ||\n");
+	printf("\t\t\t\t||                       *********                     ||\n");
+	printf("\t\t\t\t||                        *******                      ||\n");
+	printf("\t\t\t\t||                         *****                       ||\n");
+	printf("\t\t\t\t||                          ***                        ||\n");
+	printf("\t\t\t\t||                           *                         ||\n");
+	printf("\t\t\t\t||                                                     ||\n");
+	printf("\t\t\t\t+-------------------------------------------------------+\n");
+	printf("\t\t\t\t| Silahkan Tekan Tombol Apapun Untuk Masuk Ke Program!! |\n");
+	printf("\t\t\t\t+=======================================================+\n");
+}
+
+void keluar(){
+	printf("\t\t\t\t+--------------------------------------------------------------+\n");
+	printf("\t\t\t\t||       TERIMA KASIH TELAH BERKUNJUNG DI DIAMOND HOTEL       ||\n");
+	printf("\t\t\t\t+--------------------------------------------------------------+\n");
+	printf("\t\t\t\t+--------------------------------------------------------------+\n");
+	printf("\t\t\t\t||Program Creator : Komang Bayu Lobi Hartawan_2205551032      ||\n");
+	printf("\t\t\t\t||                  I Putu Gede Surya Pratama_2205551025      ||\n");
+	printf("\t\t\t\t+--------------------------------------------------------------+\n");
+	system("pause");
+	system("cls");
+	main();
+}
+
+
+void billing(){
+	system("cls");
+	printf("\t+=======================================================+\n");
+	printf("\t|                  DIAMOND HOTEL's BILING               |\n");
+	printf("\t=========================================================\n");
+	printf("\tNIK Pemesan	: %s\n", pesanan.id_pemesanan);
+	printf("\t---------------------------------------------------------\n");
+	printf("\tNama		: %s\n", pesanan.nama);
+	printf("\t---------------------------------------------------------\n");
+	printf("\tNo_Hp		: %s\n", pesanan.no_hp);
+	printf("\t---------------------------------------------------------\n");
+	printf("\tUmur		: %d\n", pesanan.umur);
+	printf("\t---------------------------------------------------------\n");
+	printf("\tjenis Kelamin	: %s\n", pesanan.jenis_kelamin);
+	printf("\t---------------------------------------------------------\n");
+	printf("\tJumlah Kamar	: %d\n", pesanan.jumlah_kamar);
+	printf("\t---------------------------------------------------------\n");
+	printf("\tLama Inap	: %d Hari\n", pesanan.lama_sewa);
+	printf("\t=========================================================\n");
+	printf("\tTanggal Check In	: %d/%d/%d\n", pesanan.tglCI, pesanan.blnCI, pesanan.thnCI);
+	printf("\tTanggal Check Out	: %d/%d/%d\n", pesanan.tglCO, pesanan.blnCO, pesanan.thnCO);
+	printf("\tTotal Harga		: Rp. %d\n\n", pesanan.total);
+	printf("\t+=======================================================+\n");
+	printf("\t|               TERIMA KASIH TELAH MEMESAN              |\n");
+	printf("\t|                    HOTEL DIAMOND                      |\n");
+	printf("\t+=======================================================+\n");
+	printf("\t     +--------------------------------------------+\n");
+	printf("\t     |     Tekan Tombol Apapun Untuk Mencetak     |\n");
+	printf("\t     +--------------------------------------------+\n\n\n");
+	
+}
+void tambah_kamar(){
+	char pilihan;
+	system("cls");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|           Penambahan Fasilitas Ekstra Bed             |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\t|    NO  |    Jenis Bed       |        Harga Bed        |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\t|    1   |    Single Bed      |      -Rp 100.000        |\n");
+	printf("\t\t\t\t|    2   |    Double Bed      |      -Rp 200.000        |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\tMasukkan Penambahan Fasilitas Ekstra Bed Yang Di Inginkan [1][2][3][4] ==> ");
+	printf ("\tApakah anda ingin menambah Ekstra Bed[y][t] ?");
+	fflush(stdin);
+	scanf (" %c", &pilihan);
+	if(pilihan=='y'){
+		printf("Masukan Nomor Bed Yang Ingin Di Request [max 1]");
+		scanf("%d", &pesanan.pilih);
+		if(pesanan.pilih==1){
+			printf("Anda Memilih Single Bed dengan Harga Rp 100.000");
+		}else if(pesanan.pilih==2){
+			printf("Anda Memilih Double Bed dengan Harga Rp 200.000");
+		}else{
+			printf("angka tidak valid");
+			tambah_kamar();
+		}
+	}else if(pilihan=='t'){
+		printf("\n");
+	}
+	
+}
+
 void pesan_kamar(){
 	system("cls");
 	FILE *pemesanan;
 	pemesanan=fopen("file_pemesanan.txt", "a+");
 	printf("\t+=======================================================+\n");
+	printf("\t| KODE KAMAR |       JENIS KAMAR        |  HARGA/MALAM  |\n");
+	printf("\t=========================================================\n");
+	printf("\t|     1      |       Standard Room      |  Rp 450.000   |\n");
+	printf("\t=========================================================\n");
+	printf("\t|     2      |       Superior Room      |  Rp 800.000   |\n");
+	printf("\t=========================================================\n");
+	printf("\t|     3      |       Deluxe Room        |  Rp 1.000.000 |\n");
+	printf("\t=========================================================\n");
+	printf("\t|     4      |     Presidential Room    |  Rp 2.000.000 |\n");
+	printf("\t=========================================================\n\n");
+
+	printf("\t+=======================================================+\n");
 	printf("\t|                  PEMESANAN TIPE KAMAR                 |\n");
 	printf("\t=========================================================\n");
 	printf("\tMasukan Kode Kamar Yang Ingin Dipesan ->>");
 	scanf("%d", &pesanan.pilih_kamar);
+	printf("\t=========================================================\n\n");
 	printf("\n\t*********************************************************\n");
 	if(pesanan.pilih_kamar>=1 && pesanan.pilih_kamar<=5){
-		printf("\tId Pemesanan "); 
+		printf("\tNIK Pemesanan	:"); 
 		scanf("%s", &pesanan.id_pemesanan);
 		printf("\t*********************************************************\n");
 		printf("\tMasukan Nama Anda :"); 
@@ -92,7 +256,7 @@ void pesan_kamar(){
 		printf("\tMasukan Umur Anda :"); 
 		scanf("%d", &pesanan.umur);
 		printf("\t*********************************************************\n");
-		printf("\tMasukan Jenis Kelamin Anda :"); 
+		printf("\tMasukan Jenis Kelamin Anda:"); 
 		scanf("%s", &pesanan.jenis_kelamin);
 		printf("\t*********************************************************\n");
 		printf("\tJumlah Kamar :");
@@ -100,19 +264,31 @@ void pesan_kamar(){
 		printf("\t*********************************************************\n");
 		printf("\tLama Sewa :");
 		scanf("%d", &pesanan.lama_sewa);
-		printf("\t==========================================================\n");
+		printf("\t*********************************************************\n");
+		printf("\tMasukan Tanggal Check in (dd/mm/yy)	:");
+		scanf("%d/%d/%d", &pesanan.tglCI, &pesanan.blnCI, &pesanan.thnCO);
+		printf("\t==========================================================\n\n");
+		printf("\tMasukan Tanggal Check Out (dd/mm/yy)	:");
+		scanf("%d/%d/%d", &pesanan.tglCO, &pesanan.blnCO, &pesanan.thnCO);
+		printf("\t==========================================================\n\n");
+		printf("\t\t\t\t==================================\n");
+		tambah_kamar();
 		hitung_total();
-		printf("Total Harga : %d\n", pesanan.total);
+		printf("\t\t\t\tTotal Harga	: %d\n", pesanan.total);
+		printf("\t\t\t\t==================================\n");
+		system("pause");
+		billing();
 	}else{
 		printf("\tMasukan Kode Tipe Kamar Yang Sesuai!!!\n");
 		system("pause");
 		pesan_kamar();
 	}
-	fprintf(pemesanan, "================================================================================================================\n");
-	fprintf(pemesanan, "| ID |        NAMA       |    No_HP        |     Umur    |Jenis Kelamin | Jumlah Kamar | Lama Sewa |   Total   |\n");
-	fprintf(pemesanan,"   %s           %s              %s                 %d           %s             %d            %d          %d      \n", pesanan.id_pemesanan, pesanan.nama, pesanan.no_hp, pesanan.umur, pesanan.jenis_kelamin, pesanan.jumlah_kamar,pesanan.lama_sewa, pesanan.total);
-	fclose(pemesanan);
+	fprintf(pemesanan, "=============================================================================================================================================\n");
+	fprintf(pemesanan, "| ID |        NAMA       |    No_HP        |     Umur    |Jenis Kelamin | Jumlah Kamar | Lama Sewa |   Total   |   Check in   |  Check out  |\n");
+	fprintf(pemesanan,"   %s           %s              %s                 %d           %s             %d            %d          %d         %d/%d/%d   |   %d/%d/%d  | \n", pesanan.id_pemesanan, pesanan.nama, pesanan.no_hp, pesanan.umur, pesanan.jenis_kelamin, pesanan.jumlah_kamar,pesanan.lama_sewa, pesanan.total, pesanan.tglCI, pesanan.blnCI, pesanan.thnCI, pesanan.tglCO, pesanan.blnCO, pesanan.thnCO);
+	fclose(pemesanan); 
 }
+
 
 void pilih_kamar(){
 	system("cls");
@@ -154,35 +330,120 @@ void pilih_kamar(){
 	printf("\t|            |                | Meja rias, sofa, ruang tamu terpisah|                 |               |\n");
 	printf("\t|            |                | dinning area, meja kerja.           |                 |               |\n");
 	printf("\t|-----------------------------------------------------------------------------------------------------|\n");
-	printf("Mulai Pesan Kamar\n");
+	printf("\t\t\t\t\t\tMulai Pesan Kamar\n");
+	printf("\t\t\t\t\t\t\t\t\t\t|-----------------------------|\n");
+	printf("\t\t\t\t\t\t\t\t\t\t|     Tekan Tombol Apapun     |\n");
+	printf("\t|-----------------------------------------------------------------------------------------------------|\n\n");
 	system("pause");
 	pesan_kamar();
 }
 
-void menu_customer(){
+void data_pemesanan(){
+	system("cls");
+	char buffer[300];
+	FILE *pesan;
+	pesan=fopen("file_pemesanan.txt", "r");
+	while(fgets(buffer, sizeof(buffer), pesan)){
+		printf("%s", buffer);
+	}
+	system("pause");
+	fclose(pesan);
+}
+
+void menu_admin(){
 	system("cls");
 	int menu;
-	printf("\t+=======================================================+\n");
-	printf("\t|                      MENU CUSTOMER                    |\n");
-	printf("\t=========================================================\n");
-	printf("\t|    NO  |    PILIHAN MENU                              |\n");
-	printf("\t=========================================================\n");
-	printf("\t|    1   |    ABOUT HOTEL                               |\n");
-	printf("\t|    2   |    PESAN KAMAR                               |\n");
-	printf("\t|    3   |    KELUAR PROGRAM                            |\n");
-	printf("\t=========================================================\n");
-	printf("\tMasukkan Nomor Menu Yang Di Inginkan [1][2][3] ==> ");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|                      MENU ADMIN                       |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\t|    NO  |    PILIHAN MENU                              |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\t|    1   |    ABOUT HOTEL                               |\n");
+	printf("\t\t\t\t|    2   |    PESAN KAMAR                               |\n");
+	printf("\t\t\t\t|    3   |    DATA PESANAN                              |\n");
+	printf("\t\t\t\t|    4   |    KELUAR PROGRAM                            |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\tMasukkan Nomor Menu Yang Di Inginkan [1][2][3] ==> ");
 	scanf("%d", &menu);
+	fflush(stdin);
 	switch(menu){
 		case 1:
-			printf("proses");
+			system("cls");
+			FILE *about;
+			about=fopen("about_hotel.txt", "r");
+			char buffer[1000];
+			while(fgets(buffer, sizeof(buffer), about)){
+				printf("%s\n", buffer);
+			}
+			fclose(about);
+			system("pause");
+			menu_admin();
 			break;
 		case 2:
 			system("cls");
 			pilih_kamar();
 			break;
 		case 3:
-			printf("Terimakasih");
+			data_pemesanan();
+		case 4:
+			system("cls");
+			keluar();
+		default :
+			system("cls");
+			printf("\t\t\t\t+---------------------------------------------------------+\n");
+			printf("\t\t\t\t|           Menu yang anda pilih tidak valid              |\n");
+			printf("\t\t\t\t+---------------------------------------------------------+\n");
+			system("pause");
+			menu_admin();
+			break;
+			
+			
+			
+	}
+}
+void menu_customer(){
+	system("cls");
+	int menu;
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|                      MENU CUSTOMER                    |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\t|    NO  |    PILIHAN MENU                              |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\t|    1   |    ABOUT HOTEL                               |\n");
+	printf("\t\t\t\t|    2   |    PESAN KAMAR                               |\n");
+	printf("\t\t\t\t|    3   |    KELUAR PROGRAM                            |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\tMasukkan Nomor Menu Yang Di Inginkan [1][2][3] ==> ");
+	fflush(stdin);
+	scanf("%d", &menu);
+	switch(menu){
+		case 1:
+			system("cls");
+			FILE *about;
+			about=fopen("about_hotel.txt", "r");
+			char buffer[1000];
+			while(fgets(buffer, sizeof(buffer), about)){
+				printf("%s\n", buffer);
+			}
+			fclose(about);
+			system("pause");
+			menu_admin();
+			break;
+		case 2:
+			system("cls");
+			pilih_kamar();
+			break;
+		case 3:
+			system("cls");
+			keluar();
+		default :
+			system("cls");
+			printf("\t\t\t\t+---------------------------------------------------------+\n");
+			printf("\t\t\t\t|           Menu yang anda pilih tidak valid              |\n");
+			printf("\t\t\t\t+---------------------------------------------------------+\n");
+			system("pause");
+			menu_customer();
+			break;
 	}
 }
 
@@ -193,26 +454,28 @@ void login_user(){
 	FILE *reg;
 	reg=fopen(akun, "r");
 	waktu();
-	printf("\t+=======================================================+\n");
-	printf("\t|                      MENU LOGIN                       |\n");
-	printf("\t+=======================================================+\n");
-	printf("\t|         Masukan Username dan Password Anda!           |\n");
-	printf("\t+=======================================================+\n");
-	printf("\tUsername :");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|                      MENU LOGIN                       |\n");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|         Masukan Username dan Password Anda!           |\n");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\tUsername :");
 	scanf("%s", username);
-	printf("\tPassword :");
+	printf("\t\t\t\t---------------------------------------------------------\n");
+	printf("\t\t\t\tPassword :");
 	scanf("%s", password);
+	printf("\t\t\t\t+=======================================================+\n");
 	while(fread(&user, 1, sizeof(user), reg)){
 		if(strcmp(username, user.username)==0 && strcmp(password, user.password)==0){
-			printf("\t\t\t    +--------------+\n");
-			printf("\t\t\t    |Login Berhasil|\n");
-			printf("\t\t\t    +--------------+\n");
+			printf("\t\t\t\t\t\t    +--------------+\n");
+			printf("\t\t\t\t\t\t    |Login Berhasil|\n");
+			printf("\t\t\t\t\t\t    +--------------+\n");
 			system("pause");
 			menu_customer();
 		}else{
-			printf("\t\t\t +----------------------------+\n");
-			printf("\t\t\t |Username atau Password Salah|\n");
-			printf("\t\t\t +----------------------------+\n");
+			printf("\t\t\t\t\t      +----------------------------+\n");
+			printf("\t\t\t\t\t      |Username atau Password Salah|\n");
+			printf("\t\t\t\t\t      +----------------------------+\n");
 			system("pause");
 			system("cls");
 			login_user();
@@ -222,84 +485,62 @@ void login_user(){
 	system("pause");
 }
 
-void about_hotel(){
-	system("cls");
-	FILE *about;
-	about=fopen("about_hotel.txt", "r");
-	char buffer[300];
-	while(fgets(buffer, sizeof(buffer), about)){
-		printf("%s\n", buffer);
-	}
-	fclose(about);
-	system("pause");
-}
-
-void menu_admin(){
-	system("cls");
-	int menu;
-	printf("\t+=======================================================+\n");
-	printf("\t|                      MENU CUSTOMER                    |\n");
-	printf("\t=========================================================\n");
-	printf("\t|    NO  |    PILIHAN MENU                              |\n");
-	printf("\t=========================================================\n");
-	printf("\t|    1   |    ABOUT HOTEL                               |\n");
-	printf("\t|    2   |    PESAN KAMAR                               |\n");
-	printf("\t|    2   |    DATA PESANAN                              |\n");
-	printf("\t|    3   |    KELUAR PROGRAM                            |\n");
-	printf("\t=========================================================\n");
-	printf("\tMasukkan Nomor Menu Yang Di Inginkan [1][2][3] ==> ");
-	scanf("%d", &menu);
-	switch(menu){
-		case 1:
-			about_hotel();
-			break;
-		case 2:
-			system("cls");
-			pilih_kamar();
-			break;
-		case 3:
-			printf("Terimakasih");
-		case 4:
-			printf("s");
-	}
-}
 
 void login_admin(){
 	char username_admin[15];
 	char password_admin[15];
 	int pilihan;
+	printf("\t\t\t\t+=======================================================+\n");
 	waktu();
-	printf("Masukan Username dan Password Anda\n");
-	printf("Username : ");
+	printf("\t\t\t\t+=======================================================+\n\n\n");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|              MASUKAN USERNAME & PASSWORD              |\n");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\tUSERNAME : ");
 	scanf("%s", &username_admin);
-	printf("Password : ");
+	printf("\t\t\t\t---------------------------------------------------------\n");
+	printf("\t\t\t\tPASSWORD : ");
 	scanf("%s", &password_admin);
+	printf("\t\t\t\t+=======================================================+\n\n");
 	if(strcmp(username_admin, "admin")==0 && strcmp(password_admin, "admin")==0){
-		printf("Login Berhasil\n");
+			printf("\t\t\t\t\t\t   + -------------- +\n");
+			printf("\t\t\t\t\t\t   | LOGIN BERHASIL |\n");
+			printf("\t\t\t\t\t\t   + -------------- +\n");
+		system("pause");
 		menu_admin();
 	}else{
-		printf("Masukan Ulang\n");
+		printf("\t\t\t\t\t     + --------------------------- +\n");
+		printf("\t\t\t\t\t     | USERNAME DAN PASSWORD SALAH |\n");
+		printf("\t\t\t\t\t     + --------------------------- +\n\n");
+		system("cls");
+		printf("\t\t\t\t\t  + -------------------------------- +\n");
+		printf("\t\t\t\t\t  | Masukan Ulang Username & Password|\n");
+		printf("\t\t\t\t\t  + -------------------------------- +\n");
+		system("pause");
+		system("cls");
+		login_admin();
 	}
-	system("pause");
-}
 
+}
 
 void form_customer(){
 	system("cls");
 	int pilihan;
-	printf("\t+=========================================================+\n");
-	printf("\t|                      FORM CUSTOMER                      |\n");
-	printf("\t+=========================================================+\n");
-	printf("\t|                    INFORMASI PENTING                    |\n");
-	printf("\t|                                                         |\n");
-	printf("\t|  1.Pilih Login jika anda sudah punya akun               |\n");
-	printf("\t|  2.*Utamakan Pilih Register jika anda belum punya akun* |\n");
-	printf("\t|                                                         |\n");
-	printf("\t+=========================================================+\n");
-	printf("\t||   1   |    REGISTER                                   ||\n");
-	printf("\t||   2   |    LOGIN                                      ||\n");
-	printf("\t+---------------------------------------------------------+\n");
-	printf("\t Masukkan nomor menu yang anda inginkan [1][2] ==> ");
+	printf("\t\t\t\t+=========================================================+\n");
+	printf("\t\t\t\t|                      FORM CUSTOMER                      |\n");
+	printf("\t\t\t\t+=========================================================+\n");
+	printf("\t\t\t\t|                    INFORMASI PENTING                    |\n");
+	printf("\t\t\t\t|                                                         |\n");
+	printf("\t\t\t\t|  1.Pilih Login jika anda sudah punya akun               |\n");
+	printf("\t\t\t\t|  2.*Utamakan Pilih Register jika anda belum punya akun* |\n");
+	printf("\t\t\t\t|                                                         |\n");
+	printf("\t\t\t\t+=========================================================+\n");
+	printf("\t\t\t\t||   1   |    REGISTER                                   ||\n");
+	printf("\t\t\t\t||   2   |    LOGIN                                      ||\n");
+	printf("\t\t\t\t||   3   |    KELUAR PROGRAM                             ||\n");
+	printf("\t\t\t\t+---------------------------------------------------------+\n");
+	printf("\t\t\t\t Masukkan nomor menu yang anda inginkan [1][2][3] ==> ");
+	fflush(stdin);
 	scanf("%d", &pilihan);
 	system("cls");
 	if(pilihan==1){
@@ -308,61 +549,67 @@ void form_customer(){
 			if(akun==NULL){
 				printf("File Not Found!\n");
 			}else{
-				printf("Silahkan Lengkapi Data Dibawah\n");
-				printf("Masukan Nama  :");
-				scanf("%s", user.nama);
-				printf("Masukan No HP :");
+				printf("\t\t\t\t+=========================================================+\n");
+				printf("\t\t\t\t|         SILAHKAN LENGKAPI DATA KETENTUAN DIBAWAH        |\n");
+				printf("\t\t\t\t+=========================================================+\n");
+				printf("\t\t\t\tMasukan Nama  : ");
+				scanf(" %s", user.nama);
+				fflush(stdin);
+				printf("\t\t\t\t---------------------------------------------------------\n");
+				printf("\t\t\t\tMasukan No HP :");
 				scanf("%s", user.no_hp);
-				printf("Masukan Email Anda :");
+				fflush(stdin);
+				printf("\t\t\t\t---------------------------------------------------------\n");
+				printf("\t\t\t\tMasukan Email Anda :");
 				scanf("%s", user.email);
-				printf("Masukan Username MAX (8 Karakter) :");
+				fflush(stdin);
+				printf("\t\t\t\t---------------------------------------------------------\n");
+				printf("\t\t\t\tMasukan Username MAX (8 Karakter) :");
 				scanf("%s", user.username);
-				printf("Masukan Password MAX (8 Karakter) :");
+				fflush(stdin);
+				printf("\t\t\t\t---------------------------------------------------------\n");
+				printf("\t\t\t\tMasukan Password MAX (8 Karakter) :");
 				scanf("%s", user.password);
 				fwrite(&user, 1, sizeof(user), reg);
 				fclose(reg);
-				printf("\n\nSELAMAT AKUN TELAH BERHASIL DI BUAT\n");
+				fflush(stdin);
+				printf("\t\t\t\t=========================================================\n");
+				printf("\t\t\t\t\t\t   + -------------------- +\n");
+				printf("\t\t\t\t\t\t   | AKUN BERHASIL DIBUAT |\n");
+				printf("\t\t\t\t\t\t   + -------------------- +\n");
+				printf("\t\t\t\t+---------------------------------------------------------+\n");
+				printf("\t\t\t\t|         SILAHKAN SEKARANG PILIH MENU LOGIN              |\n");
+				printf("\t\t\t\t+---------------------------------------------------------+\n");
 			}
 			system("pause");
 			form_customer();
 	}else if(pilihan==2){
 		login_user();
+	}else if(pilihan==3){
+		keluar();
 	}else{
-		printf("Tidak Valid\n");
+		system("cls");
+		printf("\t\t\t\t+---------------------------------------------------------+\n");
+		printf("\t\t\t\t|           Menu yang anda pilih tidak valid              |\n");
+		printf("\t\t\t\t+---------------------------------------------------------+\n");
 		system("pause");
 		form_customer();
 	}
 }
 
-void selamat(){
-	printf("\t\t\t\t+=======================================================+\n");
-	printf("\t\t\t\t|                                                       |\n");	
-	printf("\t\t\t\t|     <--  SELAMAT DATANG DI DIAMOND DREAM HOTEL -->    |\n");
-	printf("\t\t\t\t|                                                       |\n");
-	printf("\t\t\t\t+=======================================================+\n");
-	printf("\t\t\t\t|        Come with a dream leave with the future        |\n");
-	printf("\t\t\t\t+=======================================================+\n\n");
-	printf("Silahkan Tekan Tombol Apapun Untuk Masuk Ke Program!\n\n");
-}
-
-void keluar(){
-	printf("\t+--------------------------------------------------------------+\n");
-	printf("\t||    TERIMA KASIH TELAH BERKUNJUNG DI DIAMOND DREAM HOTEL    ||\n");
-	printf("\t+--------------------------------------------------------------+\n");
-}
 
 void menu_masuk(){
 	int pilihan;
-	printf("\t+=======================================================+\n");
-	printf("\t|             MENU PROGRAM DIAMOND DREAM HOTEL          |\n");
-	printf("\t=========================================================\n");
-	printf("\t|    NO  |                PILIHAN MENU                  |\n");
-	printf("\t=========================================================\n");
-	printf("\t|    1   |    SEBAGAI ADMIN                             |\n");
-	printf("\t|    2   |    SEBAGAI CUSTOMER                          |\n");
-	printf("\t|    3   |    KELUAR PROGRAM                            |\n");
-	printf("\t+=======================================================+\n");
-	printf("\tMasukkan nomor menu yang anda inginkan [1][2][3] ==>| ");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\t|             MENU PROGRAM DIAMOND DREAM HOTEL          |\n");
+	printf("\t\t\t\t========================================================\n");
+	printf("\t\t\t\t|    NO  |                PILIHAN MENU                  |\n");
+	printf("\t\t\t\t=========================================================\n");
+	printf("\t\t\t\t|    1   |    SEBAGAI ADMIN                             |\n");
+	printf("\t\t\t\t|    2   |    SEBAGAI CUSTOMER                          |\n");
+	printf("\t\t\t\t|    3   |    KELUAR PROGRAM                            |\n");
+	printf("\t\t\t\t+=======================================================+\n");
+	printf("\t\t\t\tMasukkan nomor menu yang anda inginkan [1][2][3] ==>| ");
 	scanf("%d", &pilihan);
 	system("cls");
 	switch (pilihan){
@@ -376,15 +623,21 @@ void menu_masuk(){
 			keluar();
 			break;
 		default:
-			printf("Menu yang anda pilih tidak valid");
+			printf("\t\t\t\t+---------------------------------------------------------+\n");
+			printf("\t\t\t\t|           Menu yang anda pilih tidak valid              |\n");
+			printf("\t\t\t\t+---------------------------------------------------------+\n");
+			system("pause");
+			fflush(stdin);
+			system("cls");
+			menu_masuk();
+			
 	}
 }
 
 int main(){
 	system ("color 1");;
-	selamat();
+    selamat();
 	system("pause");
 	system("cls");
 	menu_masuk();
 }
-
