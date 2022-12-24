@@ -1,3 +1,4 @@
+//header file
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -113,6 +114,8 @@ void hitung_total(){
 		pesanan.total = (pesanan.lama_sewa*presidential+biaya_admin)*pesanan.jumlah_kamar;
 	} 
 }
+
+
 void selamat(){
 	printf("\t\t\t\t+=======================================================+\n");
 	printf("\t\t\t\t|                                                       |\n");	
@@ -123,20 +126,20 @@ void selamat(){
 	printf("\t\t\t\t+=======================================================+\n");
 	printf("\t\t\t\t||                                                     ||\n");
 	printf("\t\t\t\t||-----------------------------------------------------||\n");
-	printf("\t\t\t\t||                           *                         ||\n");
-	printf("\t\t\t\t||                          ***                        ||\n");
-	printf("\t\t\t\t||                         *****                       ||\n");
-	printf("\t\t\t\t||                        *******                      ||\n");
-	printf("\t\t\t\t||                       *********                     ||\n");
-	printf("\t\t\t\t||                      ***********                    ||\n");
-	printf("\t\t\t\t||                     *************                   ||\n");
-	printf("\t\t\t\t||                     *************                   ||\n");
-	printf("\t\t\t\t||                      ***********                    ||\n");
-	printf("\t\t\t\t||                       *********                     ||\n");
-	printf("\t\t\t\t||                        *******                      ||\n");
-	printf("\t\t\t\t||                         *****                       ||\n");
-	printf("\t\t\t\t||                          ***                        ||\n");
-	printf("\t\t\t\t||                           *                         ||\n");
+	printf("\t\t\t\t||           *              *              *           ||\n");
+	printf("\t\t\t\t||          ***            ***            ***          ||\n");
+	printf("\t\t\t\t||         *****          *****          *****         ||\n");
+	printf("\t\t\t\t||        *******        *******        *******        ||\n");
+	printf("\t\t\t\t||       *********      *********      *********       ||\n");
+	printf("\t\t\t\t||      ***********    ***********    ***********      ||\n");
+	printf("\t\t\t\t||     *************  *************  *************     ||\n");
+	printf("\t\t\t\t||     *************  *************  *************     ||\n");
+	printf("\t\t\t\t||      ***********    ***********    ***********      ||\n");
+	printf("\t\t\t\t||       *********      *********      *********       ||\n");
+	printf("\t\t\t\t||        *******        *******        *******        ||\n");
+	printf("\t\t\t\t||         *****          *****          *****         ||\n");
+	printf("\t\t\t\t||          ***            ***            ***          ||\n");
+	printf("\t\t\t\t||           *              *              *           ||\n");
 	printf("\t\t\t\t||                                                     ||\n");
 	printf("\t\t\t\t+-------------------------------------------------------+\n");
 	printf("\t\t\t\t| Silahkan Tekan Tombol Apapun Untuk Masuk Ke Program!! |\n");
@@ -144,13 +147,14 @@ void selamat(){
 }
 
 void keluar(){
-	printf("\t\t\t\t+--------------------------------------------------------------+\n");
+	printf("\t\t\t\t+==============================================================+\n");
 	printf("\t\t\t\t||       TERIMA KASIH TELAH BERKUNJUNG DI DIAMOND HOTEL       ||\n");
-	printf("\t\t\t\t+--------------------------------------------------------------+\n");
-	printf("\t\t\t\t+--------------------------------------------------------------+\n");
+	printf("\t\t\t\t+==============================================================+\n");
+	waktu();
+	printf("\t\t\t\t+==============================================================+\n");
 	printf("\t\t\t\t||Program Creator : Komang Bayu Lobi Hartawan_2205551032      ||\n");
 	printf("\t\t\t\t||                  I Putu Gede Surya Pratama_2205551025      ||\n");
-	printf("\t\t\t\t+--------------------------------------------------------------+\n");
+	printf("\t\t\t\t+==============================================================+\n");
 	system("pause");
 	system("cls");
 	main();
@@ -506,13 +510,12 @@ void login_admin(){
 			printf("\t\t\t\t\t\t   + -------------- +\n");
 			printf("\t\t\t\t\t\t   | LOGIN BERHASIL |\n");
 			printf("\t\t\t\t\t\t   + -------------- +\n");
-		system("pause");
-		menu_admin();
+			system("pause");
+			menu_admin();
 	}else{
 		printf("\t\t\t\t\t     + --------------------------- +\n");
 		printf("\t\t\t\t\t     | USERNAME DAN PASSWORD SALAH |\n");
 		printf("\t\t\t\t\t     + --------------------------- +\n\n");
-		system("cls");
 		printf("\t\t\t\t\t  + -------------------------------- +\n");
 		printf("\t\t\t\t\t  | Masukan Ulang Username & Password|\n");
 		printf("\t\t\t\t\t  + -------------------------------- +\n");
@@ -635,7 +638,7 @@ void menu_masuk(){
 }
 
 int main(){
-	system ("color 1");;
+	system ("color 1");
     selamat();
 	system("pause");
 	system("cls");
