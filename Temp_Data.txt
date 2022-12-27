@@ -1,0 +1,19 @@
+=============================================================================================================================
+|Nomor Kamar| ID |        NAMA       |    No_HP      |Jenis Kelamin | Jumlah Kamar | Lama Sewa |   Total   |   Check in   |  Check out  |
+      5       1           1              1              1             11            1          5500000         1/0/0   |   1/0/0  | 
+
+=============================================================================================================================
+|Nomor Kamar| ID |        NAMA       |    No_HP      |Jenis Kelamin | Jumlah Kamar | Lama Sewa |   Total   |   Check in   |  Check out  |
+      2       1           1              1              1             1            2          950000         12/22/0   |   13/22/2022  | 
+
+=============================================================================================================================
+|Nomor Kamar| ID |        NAMA       |    No_HP      |Jenis Kelamin | Jumlah Kamar | Lama Sewa |   Total   |   Check in   |  Check out  |
+      3       1           1              1              1             1            1          500000         11/12/2022   |   12/12/2022  | 
+
+=============================================================================================================================
+|Nomor Kamar| ID |        NAMA       |    No_HP      |Jenis Kelamin | Jumlah Kamar | Lama Sewa |   Total   |   Check in   |  Check out  |
+      4       1           bayu              87              laki             3            2          2850000         12/11/2022   |   14/11/2022  | 
+
+=============================================================================================================================
+|Nomor Kamar| ID |        NAMA       |    No_HP      |Jenis Kelamin | Jumlah Kamar | Lama Sewa |   Total   |   Check in   |  Check out  |
+      12       1           jeni              87              laki-laki             2            5          8100000         8/12/202
