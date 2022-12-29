@@ -357,33 +357,20 @@ void biling(){
 }
 
 void jumlahstd(){ 
-    char ch; 
-    int wrd=1,charctr=1;
-	char num[]="roomstd.txt";
-   FILE *fptr;
-
-	   if ((fptr = fopen(num,"r")) == NULL){
-	       printf("Error! opening file");
-	       exit(1);
-	   }
-	    else 
-	        { 
-	          ch=fgetc(fptr); 
-	          while(ch!=EOF) 
-	            {  
-	                if(ch==' '||ch=='\n')
-	                    { 
-	                        wrd++; 
-	                    }
-	                    else
-	                    {
-	                        charctr++; 
-	                    }
-	                ch=fgetc(fptr); 
-	            }
-	        printf("\tJumlah Kamar Dari Standard: %d\n\n",charctr-1);         
-	        } 
-	    fclose(fptr); 
+    FILE *file;
+	  char filename[]="roomstd.txt";
+	  file = fopen(filename, "r");
+	  if (file == NULL){
+	    printf("Error opening file.\n");
+	  }
+	  int current_line = 0;
+	  char c;
+	  do {
+	    c = fgetc(file);
+	    if (c == '\n') current_line++;
+	  } while (c != EOF);
+	  fclose(file);
+	  printf("Jumlah Kamar Yang Tersedia: %d\n", current_line);
 	FILE* view;
     view = fopen("roomstd.txt","r");
     printf("\tKamar Yang Tersedia:\n");
@@ -393,33 +380,20 @@ void jumlahstd(){
     fclose(view);
 }
 void jumlahsuper(){
-	char ch; 
-    int wrd=1,charctr=1;
-	char num[]="roomsuper.txt";
-   FILE *fptr;
-
-	   if ((fptr = fopen(num,"r")) == NULL){
-	       printf("Error! opening file");
-	       exit(1);
-	   }
-	    else 
-	        { 
-	          ch=fgetc(fptr); 
-	          while(ch!=EOF) 
-	            {  
-	                if(ch==' '||ch=='\n')
-	                    { 
-	                        wrd++; 
-	                    }
-	                    else
-	                    {
-	                        charctr++; 
-	                    }
-	                ch=fgetc(fptr); 
-	            }
-	        printf("\tJumlah Kamar Dari Superior: %d\n\n",charctr-1);         
-	        } 
-	    fclose(fptr); 
+	 FILE *file;
+	  char filename[]="roomsuper.txt";
+	  file = fopen(filename, "r");
+	  if (file == NULL){
+	    printf("Error opening file.\n");
+	  }
+	  int current_line = 0;
+	  char c;
+	  do {
+	    c = fgetc(file);
+	    if (c == '\n') current_line++;
+	  } while (c != EOF);
+	  fclose(file);
+	  printf("Jumlah Kamar Yang Tersedia: %d\n", current_line);
 	FILE* view;
     view = fopen("roomsuper.txt","r");
     printf("\tKamar Yang Tersedia:\n");
@@ -430,33 +404,20 @@ void jumlahsuper(){
 }
 
 void jumlahdel(){
-	char ch; 
-    int wrd=1,charctr=1;
-	char num[]="roomdel.txt";
-   FILE *fptr;
-
-	   if ((fptr = fopen(num,"r")) == NULL){
-	       printf("Error! opening file");
-	       exit(1);
-	   }
-	    else 
-	        { 
-	          ch=fgetc(fptr); 
-	          while(ch!=EOF) 
-	            {  
-	                if(ch==' '||ch=='\n')
-	                    { 
-	                        wrd++; 
-	                    }
-	                    else
-	                    {
-	                        charctr++; 
-	                    }
-	                ch=fgetc(fptr); 
-	            }
-	        printf("\tJumlah Kamar Dari Superior: %d\n\n",charctr-1);         
-	        } 
-	    fclose(fptr); 
+	 FILE *file;
+	  char filename[]="roomdel.txt";
+	  file = fopen(filename, "r");
+	  if (file == NULL){
+	    printf("Error opening file.\n");
+	  }
+	  int current_line = 0;
+	  char c;
+	  do {
+	    c = fgetc(file);
+	    if (c == '\n') current_line++;
+	  } while (c != EOF);
+	  fclose(file);
+	  printf("Jumlah Kamar Yang Tersedia: %d\n", current_line);
 	FILE* view;
     view = fopen("roomdel.txt","r");
     printf("\tKamar Yang Tersedia:\n");
@@ -467,33 +428,20 @@ void jumlahdel(){
 }
 
 void jumlahsuit(){
-	char ch; 
-    int wrd=1,charctr=1;
-	char num[]="roomsuit.txt";
-   FILE *fptr;
-
-   if ((fptr = fopen(num,"r")) == NULL){
-       printf("Error! opening file");
-       exit(1);
-   }
-    else 
-        { 
-          ch=fgetc(fptr); 
-          while(ch!=EOF) 
-            {  
-                if(ch==' '||ch=='\n')
-                    { 
-                        wrd++; 
-                    }
-                    else
-                    {
-                        charctr++; 
-                    }
-                ch=fgetc(fptr); 
-            }
-        printf("\tJumlah Kamar Dari Superior: %d\n\n",charctr-1);         
-        } 
-    fclose(fptr); 
+	 FILE *file;
+	  char filename[]="roomsuit.txt";
+	  file = fopen(filename, "r");
+	  if (file == NULL){
+	    printf("Error opening file.\n");
+	  }
+	  int current_line = 0;
+	  char c;
+	  do {
+	    c = fgetc(file);
+	    if (c == '\n') current_line++;
+	  } while (c != EOF);
+	  fclose(file);
+	  printf("Jumlah Kamar Yang Tersedia: %d\n", current_line);
 	FILE* view;
     view = fopen("roomsuit.txt","r");
     printf("\tKamar Yang Tersedia:\n");
@@ -504,33 +452,20 @@ void jumlahsuit(){
 }
 
 void jumlahpres(){
-	char ch; 
-    int wrd=1,charctr=1;
-	char num[]="roompres.txt";
-   FILE *fptr;
-
-   if ((fptr = fopen(num,"r")) == NULL){
-       printf("Error! opening file");
-       exit(1);
-   }
-    else 
-        { 
-          ch=fgetc(fptr); 
-          while(ch!=EOF) 
-            {  
-                if(ch==' '||ch=='\n')
-                    { 
-                        wrd++; 
-                    }
-                    else
-                    {
-                        charctr++; 
-                    }
-                ch=fgetc(fptr); 
-            }
-        printf(" Jumlah Kamar Dari Superior: %d\n\n",charctr-1);         
-        } 
-    fclose(fptr); 
+	 FILE *file;
+	  char filename[]="roompres.txt";
+	  file = fopen(filename, "r");
+	  if (file == NULL){
+	    printf("Error opening file.\n");
+	  }
+	  int current_line = 0;
+	  char c;
+	  do {
+	    c = fgetc(file);
+	    if (c == '\n') current_line++;
+	  } while (c != EOF);
+	  fclose(file);
+	  printf("Jumlah Kamar Yang Tersedia: %d\n", current_line);
 	FILE* view;
     view = fopen("roompres.txt","r");
     printf("\tKamar Yang Tersedia:\n");
